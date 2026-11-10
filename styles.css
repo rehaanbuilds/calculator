@@ -19,6 +19,7 @@ body {
 .title {
     font-size: 50px;
     font-weight: bold;
+    margin: 0;
 }
 
 .calculator {
@@ -38,6 +39,17 @@ body {
     text-align: right;
     background-color: #9aa399;
     border-radius: 20px;
+}
+
+.top-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.top-row button {
+    border-radius: 20px;
+    height: 70px;
 }
 
 .buttons {

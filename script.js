@@ -54,7 +54,7 @@ function updateDisplay() {
             } 
             else if (value === "+" || value === "-" 
                 || value === "*" || value === "/") {
-                    handleOperator(value);
+                handleOperator(value);
             } 
             else {
                 handleNumber(value);
