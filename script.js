@@ -49,7 +49,9 @@ function updateDisplay() {
                 operator = "";
                 startNewNum = false;
             } 
-            else if (value === "=") {
+            else if (value === "Del") {
+                undo();
+            } else if (value === "=") {
                 handleEquals();
             } 
             else if (value === "+" || value === "-" 
@@ -105,6 +107,25 @@ function handleEquals() {
     screen.textContent = result;
     startNewNum = true;
     operator = "";
+}
+
+function undo() {
+    if (startNewNum) {
+        if (operator !== "") {
+            operator = "";
+            screen.textContent = num1;
+            startNewNum = false;
+        }
+
+        return;
+    }
+
+    if (screen.textContent.length <= 1) {
+        screen.textContent = "0";
+    } 
+    else {
+        screen.textContent = screen.textContent.slice(0, -1);
+    }
 }
 
 updateDisplay();
