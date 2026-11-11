@@ -101,12 +101,12 @@ function handleOperator(value) {
 }
 
 function handleEquals() {
+    num2 = Number(screen.textContent);
+    
     if ((operator === "/" && num2 === 0) || operator === "") {
         screen.textContent = "Error";
         return;
     }
-
-    num2 = Number(screen.textContent);
 
     const result = Math.round(operate(operator, num1, num2));
 
