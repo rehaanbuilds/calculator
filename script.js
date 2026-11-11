@@ -3,7 +3,6 @@ let num2 = 0;
 let operator = "";
 
 let startNewNum = false;
-let calculated = false;
 
 const screen = document.querySelector(".screen");
 const buttons = document.querySelectorAll("button");
@@ -51,6 +50,8 @@ function updateDisplay() {
             } 
             else if (value === "Del") {
                 undo();
+            } else if (value === ".") {
+                handleDecimal();
             } else if (value === "=") {
                 handleEquals();
             } 
@@ -107,6 +108,15 @@ function handleEquals() {
     screen.textContent = result;
     startNewNum = true;
     operator = "";
+}
+
+function handleDecimal() {
+    if (startNewNum) {
+        screen.textContent = "0.";
+        startNewNum = false;
+    } else if (!screen.textContent.includes(".")) {
+        screen.textContent += ".";
+    }
 }
 
 function undo() {
