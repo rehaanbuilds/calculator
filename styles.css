@@ -11,7 +11,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: 35px;
     height: 100vh;
     background-color: rgb(230, 230, 230);
 }
