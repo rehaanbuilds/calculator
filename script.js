@@ -41,6 +41,11 @@ function updateDisplay() {
         button.addEventListener("click", () => {
             const value = button.textContent;
 
+            if (screen.textContent === "Error") {
+                screen.textContent = "0";
+                startNewNum = false;
+            }
+
             if (value === "C") {
                 screen.textContent = "0";
                 num1 = 0;
